@@ -1,5 +1,7 @@
 const productModel = require('../../model/admin/product.model');
 const cartModel = require('../../model/user/cart.model');
+const {mongoose} = require('mongoose');
+
 
 exports.addnewCart = async (req,res) => {
     try {

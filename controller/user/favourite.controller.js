@@ -1,5 +1,7 @@
 const favouriteModel = require('../../model/user/favourite.model');
 const productModel = require('../../model/admin/product.model');
+const {mongoose} = require('mongoose');
+
 
 exports.addToFavourite = async (req,res) => {
     try {
