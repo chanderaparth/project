@@ -9,11 +9,6 @@ const path = require('path');
 const imagepath = path.join(__dirname,'public','images');
 const indexRoute = require('./routes/admin/index.routes');
 const indexroute = require('./routes/user/index.routes');
-// const loginRoutes = require('./routes/login.routes');
-// const product = require('./public/products.json');
-// const { listen } = require('express/lib/application');
-// const { connect } = require('http2');
-// const { contentType } = require('express/lib/response');
 
 // DB connection
 async function main() {
@@ -29,8 +24,6 @@ main().then(() => {
 server.use(morgan('dev'))
 server.use(express.json());
 server.use('/public/images',express.static(imagepath));
-// server.use(express.urlencoded({extended: true}));
-// server.set("view engine", 'ejs');
 
 
 server.use('/api/admin', indexRoute);
