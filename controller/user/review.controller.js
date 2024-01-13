@@ -19,7 +19,7 @@ exports.addReivew = async (req,res) => {
 
         let productpath;
         if(req.file){
-            productpath = '${req.file.path}';
+            productpath = `${req.file.path}`;
         }
         let review = await reviewModel.create({
             user: req.user._id,
@@ -27,7 +27,7 @@ exports.addReivew = async (req,res) => {
             title,
             productImage: productpath,
             username: isUser.name,
-            profileImage: isUser.profileImage,
+            profileImage: isUser.profileimage,
             rating
         })
 
