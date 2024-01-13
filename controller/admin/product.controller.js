@@ -10,8 +10,8 @@ exports.createProduct = async (req,res) => {
         }
 
         let productpath;
-        if(req.file){
-            productpath = '${req.file.path}'
+        if(req.file){ 
+            productpath = '${req.file.path.replace(/\\/g,'/')}' 
         }
         product = await productModel.create({
             admin: req.admin._id,
