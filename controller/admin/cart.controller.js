@@ -1,6 +1,6 @@
 const { mongoose } = require('mongoose');
 const cartModel = require('../../model/user/cart.model');
-const productModel = require('../../model/admin/product.model');
+// const productModel = require('../../model/admin/product.model');
 
 exports.getAllCart = async (req,res) => {
     try {

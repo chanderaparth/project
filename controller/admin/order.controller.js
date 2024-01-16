@@ -5,8 +5,8 @@ const {mongoose} = require('mongoose');
 
 exports.getAllOrder = async (req,res) => {
     try {
-        let getOrder = await orderModel.find({isDelete: false});
-        res.json(getOrder);
+        let Order = await orderModel.find({isDelete: false});
+        res.json(Order);
     } catch (err) {
         console.log(err);
         res.status(500).json({message: "Internal Server Error"});

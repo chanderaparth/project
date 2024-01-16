@@ -135,42 +135,42 @@ exports.deleteProfile = async (req,res) => {
     }
 };
 
-exports.updateProfile = async (req,res) => {
-    try {
-        let {name, email, profileImage} = req.body;
-        let filepath;
-        if(req.file){
-            filepath = `${req.file.path}`
-        }
-        let user = await userModel.findByIdAndUpdate(
-            req.admin._id,
-            { $set:
-                {
-                    name: name,
-                    email: email,
-                    profileImage: filepath,
-                },
-            },
-            {new:true}
-        )
-        res.json({user, message: "profile changed successfully"});
-    } catch (err) {
-        console.log(err);
-        res.status(500).json({message:"Internal Server Error"});
-    }
-}
+// exports.updateProfile = async (req,res) => {
+//     try {
+//         let {name, email, profileImage} = req.body;
+//         let filepath;
+//         if(req.file){
+//             filepath = `${req.file.path}`
+//         }
+//         let user = await userModel.findByIdAndUpdate(
+//             req.admin._id,
+//             { $set:
+//                 {
+//                     name: name,
+//                     email: email,
+//                     profileImage: filepath,
+//                 },
+//             },
+//             {new:true}
+//         )
+//         res.json({user, message: "profile changed successfully"});
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json({message:"Internal Server Error"});
+//     }
+// }
 
-exports.deleteProfile = async (req,res) => {
-    try {
-        let user = await userModel.findByIdAndUpdate(
-            req.admin._id,
-            {
-                $set: {isDelete: true}
-            }
-        )
-        res.json({user, message: "profile deleted"});
-    } catch (err) {
-        console.log(err);
-        res.status(500).json({message:"Internal Server Error"});
-    }
-}
+// exports.deleteProfile = async (req,res) => {
+//     try {
+//         let user = await userModel.findByIdAndUpdate(
+//             req.admin._id,
+//             {
+//                 $set: {isDelete: true}
+//             }
+//         )
+//         res.json({user, message: "profile deleted"});
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json({message:"Internal Server Error"});
+//     }
+// }
